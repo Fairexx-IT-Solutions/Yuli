@@ -1,0 +1,360 @@
+
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+    padding: 0;
+   
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    width: 100vw;
+    height: 50px;
+    top: 0;
+    left: 0;
+    margin: 0;
+    color: #333;
+    font-weight: 900;
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+   
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+}
+.navbarText{
+    margin-left: -600px;
+    z-index: 2;
+    position: relative;
+   
+}
+.logoimg{
+    width:80px;
+    height: 60px;
+    margin-left: -400px;
+    position: absolute;
+    margin-top: -5px;
+   
+}
+
+
+.container{
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+    width: 100vw;
+    background: url(./images/people.jpg);
+    height: 120vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    
+}
+.positions{
+     
+    display: grid;
+ grid-template-columns: 1fr 1fr;
+ margin: 50px 80px;
+ padding: 50px;
+ 
+
+}
+.container-left{
+   width: 70%;
+   left: 20%;
+   text-align: left;
+   color: #fff;
+   z-index: 2;
+}
+.leftpara{
+    width: 100%;
+    padding: 30px;
+    color: rgb(240, 236, 236, 0.7);
+}
+.container-right{
+   width: 60%;
+   right: 0;
+   margin-left: 50px;
+   background-color:rgba(0, 0, 0, 0.7);
+   height:auto;
+   color: #fff;
+   z-index: 2;
+   padding: 10px 20px;
+   font-size: 15px;
+   border-radius: 10px;
+   text-align: left;
+   box-shadow: inset  0 -3em 3em rgba(0, 0, 0, 0.3),
+                       0.3em 0.3em 1em rgba(0, 0, 0, 0.7);
+}
+.container::before{
+    content: '';
+    width: 100vw;
+    left: 0;
+    top: 10%;
+    height: 120vh;
+    background-color: rgba(18, 58, 55, 0.7);
+    position: absolute  
+}
+.container.shownav{
+    transform: rotate(-20deg);
+}
+
+.circle{
+    background-color:rgba(0, 0, 0, 0.7);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+     transition: transform  0.5s linear;
+     z-index: 1;
+     position: absolute;
+     position: fixed;
+    top: -100px;
+    left: -100px ;
+}
+ .container.shownav .circle{
+     transform: rotate(-60deg);
+ }
+.circle button{
+    cursor: pointer;
+    position: relative;
+    top: 9%;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    left: 7%;
+    height: auto;
+    font-size: 24px;
+   
+}
+.circle button:focus{
+    outline: none;
+}
+
+.circle button#open{
+    left: 10%;
+    top:65%;
+} 
+.circle button#close{
+left:-10%;
+top: 80%;
+    transform: rotate(-40deg);
+    z-index: 1;
+
+}
+.container.shownav + nav li{
+    transform: translateX(0);
+    transition-delay: 0.3s ;
+}
+nav{
+    position: absolute;
+    bottom: 40px;
+    left:0;
+    z-index: -1;
+
+}
+nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+nav ul li{
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    transform: translateX(-20%);
+    transition: transform 0.4s ease-in;
+}
+
+nav ul li i{
+
+margin-right: 10px;
+} 
+nav ul li + li{
+    margin-left: 15px;
+}
+nav ul li + li + li{
+    margin-left: 15px;
+}
+
+
+.form{
+    margin: 15px;
+
+}
+
+.form input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    margin: 5px;
+    font-size: 18px;
+    display: block;
+    color: #fff;
+    width: 100%;
+    
+}
+.form input:focus{
+    background-color: transparent;
+    outline: 0;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    
+    
+}
+.btn1{
+  width: 90%;
+    background-color: rgba(55, 160, 153, 0.7);
+    color: white;
+    border:0;
+    margin:0px 15px;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+.btn1:hover{
+    background-color: rgba(112, 182, 177, 0.7); 
+}
+.btn1:active{
+    transform: scale(0.98);
+}
+
+.form label{
+ top: -30px;
+ position: relative;
+ left:0;
+    
+   
+}
+.form label span{
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      
+}
+ .form  input:focus + label span,
+.form  input:valid + label span{
+    color: rgb(224, 190, 115);
+    transform: translateY(-30px);
+}
+.form  input:focus,
+.form input:valid{
+    outline: 0;
+    border-bottom-color: rgb(224, 190, 115);
+} 
+
+.form-text{
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    
+
+}
+.form-head{
+    color: rgb(196, 139, 16);
+}
+.text{
+    color: rgb(196, 139, 16);
+}
+.text a{
+    text-decoration: none;
+    color: rgba(112, 182, 177, 0.7);
+}
+.container2{
+    background-color:rgba(243, 238, 237, 0.9);
+    width: 100vw;
+    margin-top: 60px;
+    height: auto;
+    font-family: 'Inter', sans-serif;
+    line-height: 20pt;
+    color: rgb(63, 62, 62);
+    padding: 80px 60px;
+    
+
+}
+.container2-first, .container2-second, .container2-third{
+    display: flex;
+}
+.container2-second{
+    background-color: rgba(112, 182, 177, 0.1);
+    height:auto;
+  box-sizing: 0;
+ 
+    
+  
+}
+.container2-third{
+    margin: 20px;
+}
+
+.first::first-letter{
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 40px;
+    margin-right: 9px;
+    font-size: 40px;
+    width: 40px;
+    float: left;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 5px 15px;
+   line-height: 1;
+    border-radius: 50%;
+    
+}
+.imgtext{
+    width:40vw;
+    height: 300px;
+    border-radius: 10px;
+}
+.leftside{
+    margin-right: 70px;
+}
+.rightside{
+    margin-left: 70px;
+}
+.btn2{
+    background-color: rgba(55, 160, 153, 0.7);
+    width:200px;
+    margin: 20px;
+    padding: 15px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
+.btn2:hover{
+    background-color: rgba(112, 182, 177, 0.7);
+}
+.btn2:active{
+    transform: scale(0.96);
+}
+.paragraph{
+    width: 50vw;
+}
+footer{
+    background-color: rgba(18, 58, 55, 0.7);
+    height: 20vh;
+    width: 100vw;
+}
+footer{
+   padding: 40px;
+    color: rgb(248, 247, 247, 0.7)
+}
+footer div{
+    margin: 10px;
+}
+@media only screen and (max-width: 700px) {
+    
+  }
